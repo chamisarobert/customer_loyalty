@@ -14,20 +14,22 @@ annotate customer_loyaltySrv.Customers with {
 };
 
 annotate customer_loyaltySrv.Customers with @UI.LineItem: [
- { $Type: 'UI.DataField', Value: email },
- { $Type: 'UI.DataField', Value: customerNumber },
- { $Type: 'UI.DataField', Value: totalPurchaseValue },
- { $Type: 'UI.DataField', Value: totalRewardPoints },
- { $Type: 'UI.DataField', Value: totalRedeemedRewardPoints }
+  { $Type: 'UI.DataField', Value: email },
+  { $Type: 'UI.DataField', Value: customerNumber },
+  { $Type: 'UI.DataField', Value: totalPurchaseValue.value },
+  { $Type: 'UI.DataField', Label: ' ', Value: totalPurchaseValue.currency.symbol },
+  { $Type: 'UI.DataField', Value: totalRewardPoints },
+  { $Type: 'UI.DataField', Value: totalRedeemedRewardPoints }
 ];
 
 annotate customer_loyaltySrv.Customers with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
- { $Type: 'UI.DataField', Value: email },
- { $Type: 'UI.DataField', Value: customerNumber },
- { $Type: 'UI.DataField', Value: totalPurchaseValue },
- { $Type: 'UI.DataField', Value: totalRewardPoints },
- { $Type: 'UI.DataField', Value: totalRedeemedRewardPoints }
+  { $Type: 'UI.DataField', Value: email },
+  { $Type: 'UI.DataField', Value: customerNumber },
+  { $Type: 'UI.DataField', Value: totalPurchaseValue.value },
+  { $Type: 'UI.DataField', Label: ' ', Value: totalPurchaseValue.currency.symbol },
+  { $Type: 'UI.DataField', Value: totalRewardPoints },
+  { $Type: 'UI.DataField', Value: totalRedeemedRewardPoints }
   ]
 };
 
@@ -56,16 +58,18 @@ annotate customer_loyaltySrv.Products with {
 };
 
 annotate customer_loyaltySrv.Products with @UI.LineItem: [
- { $Type: 'UI.DataField', Value: name },
- { $Type: 'UI.DataField', Value: description },
- { $Type: 'UI.DataField', Value: price }
+  { $Type: 'UI.DataField', Value: name },
+  { $Type: 'UI.DataField', Value: description },
+  { $Type: 'UI.DataField', Value: price.value },
+  { $Type: 'UI.DataField', Label: ' ', Value: price.currency.symbol }
 ];
 
 annotate customer_loyaltySrv.Products with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
- { $Type: 'UI.DataField', Value: name },
- { $Type: 'UI.DataField', Value: description },
- { $Type: 'UI.DataField', Value: price }
+  { $Type: 'UI.DataField', Value: name },
+  { $Type: 'UI.DataField', Value: description },
+  { $Type: 'UI.DataField', Value: price.value },
+  { $Type: 'UI.DataField', Label: ' ', Value: price.currency.symbol }
   ]
 };
 
@@ -148,16 +152,18 @@ annotate customer_loyaltySrv.Purchases with {
 };
 
 annotate customer_loyaltySrv.Purchases with @UI.LineItem: [
- { $Type: 'UI.DataField', Value: purchaseValue },
- { $Type: 'UI.DataField', Value: rewardPoints },
+  { $Type: 'UI.DataField', Value: purchaseValue.value },
+  { $Type: 'UI.DataField', Label: ' ', Value: purchaseValue.currency.symbol },
+  { $Type: 'UI.DataField', Value: rewardPoints },
     { $Type: 'UI.DataField', Label: 'Customer', Value: customer_ID },
     { $Type: 'UI.DataField', Label: 'Selected Product', Value: selectedProduct_ID }
 ];
 
 annotate customer_loyaltySrv.Purchases with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
- { $Type: 'UI.DataField', Value: purchaseValue },
- { $Type: 'UI.DataField', Value: rewardPoints },
+  { $Type: 'UI.DataField', Value: purchaseValue.value },
+  { $Type: 'UI.DataField', Label: ' ', Value: purchaseValue.currency.symbol },
+  { $Type: 'UI.DataField', Value: rewardPoints },
     { $Type: 'UI.DataField', Label: 'Customer', Value: customer_ID },
     { $Type: 'UI.DataField', Label: 'Selected Product', Value: selectedProduct_ID }
   ]

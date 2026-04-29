@@ -14,7 +14,8 @@
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
-    "@sap/dev-cap-tools": "^1.31.0"
+    "@sap/dev-cap-tools": "^1.31.0",
+    "@ui5/linter": "^1.20.18"
   },
   "scripts": {
     "start": "cds-serve",
@@ -24,7 +25,9 @@
     "watch-customer_loyalty.purchases": "cds watch --open customer_loyalty.purchases/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-customer_loyalty.customers": "cds watch --open customer_loyalty.customers/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-customer_loyalty.products": "cds watch --open customer_loyalty.products/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-customer_loyalty.redemptions": "cds watch --open customer_loyalty.redemptions/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-customer_loyalty.redemptions": "cds watch --open customer_loyalty.redemptions/webapp/index.html?sap-ui-xx-viewCache=false",
+    "lint:ui5": "ui5lint",
+    "lint": "npm run lint:ui5"
   },
   "private": true,
   "cds": {

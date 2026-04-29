@@ -1,6 +1,6 @@
-ID;name;email;customerNumber;totalPurchaseValue;totalRewardPoints;totalRedeemedRewardPoints
-5d50bafb-243b-4fc0-a29b-43a20c3a8361;Alice Johnson;alice.johnson@example.com;1200547;9876.54;987.65;123.45
-b15481d7-c561-4de2-9645-ae06acdbce80;Bob Smith;bob.smith@example.com;1234567;4321.75;432.17;54.23
-53f596f8-8941-4d72-a740-d9a657708640;Cathy Lee;cathy.lee@example.com;2345678;8765.10;876.51;109.49
-39b78ba8-5ebd-46ef-a720-1e73600ea363;David Brown;david.brown@example.com;3456789;6543.89;654.39;78.51
-ca277a12-3738-4c63-bf5a-f4739bfe44ac;Eva Green;eva.green@example.com;4567890;5432.45;543.25;65.20
+ID;name;email;customerNumber;totalPurchaseValue_value;totalPurchaseValue_currency_code;totalRewardPoints;totalRedeemedRewardPoints
+5d50bafb-243b-4fc0-a29b-43a20c3a8361;Alice Johnson;alice.johnson@example.com;1200547;9876.54;ZAR;987;123
+b15481d7-c561-4de2-9645-ae06acdbce80;Bob Smith;bob.smith@example.com;1234567;4321.75;ZAR;432;54
+53f596f8-8941-4d72-a740-d9a657708640;Cathy Lee;cathy.lee@example.com;2345678;8765.10;ZAR;876;109
+39b78ba8-5ebd-46ef-a720-1e73600ea363;David Brown;david.brown@example.com;3456789;6543.89;ZAR;654;78
+ca277a12-3738-4c63-bf5a-f4739bfe44ac;Eva Green;eva.green@example.com;4567890;5432.45;ZAR;543;65

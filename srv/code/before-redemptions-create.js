@@ -8,18 +8,18 @@ module.exports = async function(request) {
   const { customer_ID, redeemedAmount } = request.data;
 
   if (!customer_ID || redeemedAmount === undefined) {
-    throw new Error('Customer ID and redeemed amount must be provided.');
+    request.reject(400, 'CUSTOMER_ID_REDEEMED_AMOUNT_REQUIRED');
   }
 
   // Fetch the customer details
   const customer = await SELECT.one.from(Customers).where({ ID: customer_ID });
 
   if (!customer) {
-    throw new Error('Customer not found.');
+    request.reject(400, 'CUSTOMER_NOT_FOUND');
   }
 
   if (customer.totalRewardPoints < redeemedAmount) {
-    throw new Error('Insufficient reward points.');
+    request.reject(400, 'INSUFFICIENT_REWARD_POINTS');
   }
 
   // Update the customer's reward points

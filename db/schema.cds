@@ -1,12 +1,17 @@
 namespace customer_loyalty;
-using { cuid } from '@sap/cds/common';
+using { cuid, Currency, Currencies } from '@sap/cds/common';
+
+define type Amount {
+  value    : Decimal(15,2);
+  currency : Currency;
+}
 
 @assert.unique: { customerNumber: [customerNumber] }
 entity Customers : cuid {
   name: String(100);
   email: String(100);
   customerNumber: Integer @mandatory;
-  totalPurchaseValue: Integer;
+  totalPurchaseValue: Amount;
   totalRewardPoints: Integer;
   totalRedeemedRewardPoints: Integer;
   purchases: Association to many Purchases on purchases.customer = $self;
@@ -17,12 +22,12 @@ entity Customers : cuid {
 entity Products : cuid {
   name: String(100) @mandatory;
   description: String(500);
-  price: Integer;
+  price: Amount;
   purchases: Association to many Purchases on purchases.selectedProduct = $self;
 }
 
 entity Purchases : cuid {
-  purchaseValue: Integer;
+  purchaseValue: Amount;
   rewardPoints: Integer;
   customer: Association to Customers;
   selectedProduct: Association to Products;
@@ -32,4 +37,3 @@ entity Redemptions : cuid {
   redeemedAmount: Integer;
   customer: Association to Customers;
 }
-
